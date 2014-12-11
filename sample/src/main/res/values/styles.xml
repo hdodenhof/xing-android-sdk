@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <item name="toolbarStyle">@style/AppActionToolbar</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+
+    </style>
+
+    <style name="AppActionToolbar" parent="Widget.AppCompat.Toolbar">
+
+        <item name="titleTextAppearance">@style/AppActionBarTitleText</item>
+
+    </style>
+
+    <style name="AppActionBarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+
+        <item name="android:textColor">@color/primaryText</item>
+
+    </style>
+
+</resources>

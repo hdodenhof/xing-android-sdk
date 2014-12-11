@@ -1,0 +1,5 @@
+package de.hdodenhof.xingapi.enums;
+
+public enum CarrerLevel {
+    STUDENT_INTERN, ENTRY_LEVEL, PROFESSIONAL_EXPERIENCED, MANAGER_SUPERVISOR, EXECUTIVE, SENIOR_EXECUTIVE
+}
