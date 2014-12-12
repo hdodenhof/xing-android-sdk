@@ -14,6 +14,15 @@ An Android SDK for accessing the XING API.
 ## Gradle
 
 ```
+repositories {
+    ...
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+...
+
 dependencies {
     ...
     compile 'de.hdodenhof:xing-android-sdk:1.0.0-SNAPSHOT'
