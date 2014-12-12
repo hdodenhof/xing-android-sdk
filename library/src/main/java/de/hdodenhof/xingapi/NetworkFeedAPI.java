@@ -1,7 +1,9 @@
 package de.hdodenhof.xingapi;
 
+import java.util.Date;
 import java.util.List;
 
+import de.hdodenhof.xingapi.enums.UserField;
 import de.hdodenhof.xingapi.internal.communication.ErrorHandler;
 import de.hdodenhof.xingapi.internal.communication.XingApiInterface;
 import de.hdodenhof.xingapi.models.Comment;
@@ -18,11 +20,22 @@ public class NetworkFeedAPI extends BaseAPI {
         mAPI = restAdapter.create(XingApiInterface.NetworkFeed.class);
     }
 
-    public List<NetworkActivity> getNetworkFeed(String userId) {
+    public List<NetworkActivity> getNetworkFeed(String userId, Boolean aggregate, Date since, Date until, List<UserField> userFields) {
         validateNotEmpty(userId, "userId");
 
+        String userFieldsFlat = null;
+        if (!userFields.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (UserField userField : userFields) {
+                sb.append(userField.toString());
+                sb.append(",");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            userFieldsFlat = sb.toString();
+        }
+
         try {
-            return mAPI.getNetworkFeed(userId).unwrap();
+            return mAPI.getNetworkFeed(userId, aggregate, since, until, userFieldsFlat).unwrap();
         } catch (RetrofitError e) {
             ErrorHandler.handle(e);
         }

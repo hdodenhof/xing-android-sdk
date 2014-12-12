@@ -1,5 +1,7 @@
 package de.hdodenhof.xingapi.internal.communication;
 
+import java.util.Date;
+
 import de.hdodenhof.xingapi.internal.response.ActivityWrapper;
 import de.hdodenhof.xingapi.internal.response.CommentsWrapper;
 import de.hdodenhof.xingapi.internal.response.ContactsWrapper;
@@ -104,7 +106,7 @@ public abstract class XingApiInterface {
     public interface NetworkFeed {
 
         @GET(BASEPATH + "/users/{userId}/network_feed.json")
-        NetworkActivityWrapper getNetworkFeed(@Path("userId") String userId);
+        NetworkActivityWrapper getNetworkFeed(@Path("userId") String userId, @Query("aggregate") Boolean aggregate, @Query("since") Date since, @Query("until") Date until, @Query("user_fields") String userFields);
 
         @GET(BASEPATH + "/users/{userId}/feed.json")
         NetworkActivityWrapper getUserFeed(@Path("userId") String userId);
