@@ -4,17 +4,11 @@ import java.util.Date;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public class Status implements ActivityObject {
+public class Status extends ActivityObject {
 
-    private String id;
     private Date createdAt;
     private String content;
     private User creator;
-
-    @Override
-    public String getId() {
-        return id;
-    }
 
     public Date getCreatedAt() {
         return createdAt;

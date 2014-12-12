@@ -12,9 +12,8 @@ import de.hdodenhof.xingapi.enums.LanguageSkill;
 import de.hdodenhof.xingapi.enums.PremiumService;
 import de.hdodenhof.xingapi.enums.WebProfile;
 
-public class User implements ActivityObject {
+public class User extends ActivityObject {
 
-    private String id;
     private String activeEmail;
     private List<Badge> badges;
     private BirthDate birthDate;
@@ -39,10 +38,6 @@ public class User implements ActivityObject {
     private String wants;
     private Map<WebProfile, List<String>> webProfiles;
     private Map<IMAccount, String> instantMessagingAccounts;
-
-    public String getId() {
-        return id;
-    }
 
     public String getActiveEmail() {
         return activeEmail;

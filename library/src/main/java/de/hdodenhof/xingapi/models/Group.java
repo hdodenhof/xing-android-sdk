@@ -4,17 +4,11 @@ import java.util.Date;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public class Group implements ActivityObject {
+public class Group extends ActivityObject {
 
-    private String id;
     private String displayName;
     private String permalink;
     private Date createdAt;
-
-    @Override
-    public String getId() {
-        return id;
-    }
 
     public Date getCreatedAt() {
         return createdAt;

@@ -4,17 +4,11 @@ import java.util.Date;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public class Thread implements ActivityObject {
+public class Thread extends ActivityObject {
 
-    private String id;
     private Date createdAt;
     private String title;
     private String permalink;
-
-    @Override
-    public String getId() {
-        return id;
-    }
 
     public Date getCreatedAt() {
         return createdAt;

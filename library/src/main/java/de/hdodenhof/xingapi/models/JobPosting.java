@@ -4,17 +4,11 @@ import java.util.Date;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public class JobPosting implements ActivityObject {
+public class JobPosting extends ActivityObject {
 
-    private String id;
     private Date createdAt;
     private String name;
     private String permalink;
-
-    @Override
-    public String getId() {
-        return id;
-    }
 
     public Date getCreatedAt() {
         return createdAt;

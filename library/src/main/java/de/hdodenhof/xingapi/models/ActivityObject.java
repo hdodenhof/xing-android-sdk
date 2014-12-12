@@ -2,10 +2,14 @@ package de.hdodenhof.xingapi.models;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public interface ActivityObject {
+public abstract class ActivityObject {
 
-    public ActivityObjectType getType();
+    private String id;
 
-    public String getId();
+    public abstract ActivityObjectType getType();
+
+    public String getId() {
+        return id;
+    }
 
 }

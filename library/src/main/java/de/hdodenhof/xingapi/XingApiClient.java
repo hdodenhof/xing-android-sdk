@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 import de.hdodenhof.xingapi.internal.AuthHandler;
 import de.hdodenhof.xingapi.internal.OAuthConstants;
 import de.hdodenhof.xingapi.internal.communication.SigningOkClient;
+import de.hdodenhof.xingapi.models.ActivityObject;
+import de.hdodenhof.xingapi.typeadapter.ActivityObjectTypeAdapter;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
@@ -77,6 +79,7 @@ public class XingApiClient {
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .setDateFormat(API_DATE_FORMAT)
+                .registerTypeAdapter(ActivityObject.class, new ActivityObjectTypeAdapter())
                 .create();
         return new GsonConverter(gson);
     }

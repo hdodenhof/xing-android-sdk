@@ -4,9 +4,8 @@ import java.util.Date;
 
 import de.hdodenhof.xingapi.enums.ActivityObjectType;
 
-public class Bookmark implements ActivityObject {
+public class Bookmark extends ActivityObject {
 
-    private String id;
     private Date createdAt;
     private String title;
     private User creator;
@@ -14,11 +13,6 @@ public class Bookmark implements ActivityObject {
     private String description;
     private String image;
     private String bookmarkType;
-
-    @Override
-    public String getId() {
-        return id;
-    }
 
     public Date getCreatedAt() {
         return createdAt;
