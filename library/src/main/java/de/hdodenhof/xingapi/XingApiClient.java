@@ -47,6 +47,7 @@ public class XingApiClient {
     private NetworkFeedAPI mNetworkFeedAPI;
     private ProfileVisitsAPI mProfileVisitsAPI;
     private UserProfilesAPI mUserProfilesAPI;
+    private JobAPI mJobAPI;
 
     public XingApiClient(String consumerKey, String consumerSecret, Logger logger) {
         mOAuthService = new ServiceBuilder()
@@ -126,5 +127,12 @@ public class XingApiClient {
             mUserProfilesAPI = new UserProfilesAPI(mRestAdapter);
         }
         return mUserProfilesAPI;
+    }
+
+    public JobAPI getJobAPI() {
+        if (mJobAPI == null) {
+            mJobAPI = new JobAPI(mRestAdapter);
+        }
+        return mJobAPI;
     }
 }
