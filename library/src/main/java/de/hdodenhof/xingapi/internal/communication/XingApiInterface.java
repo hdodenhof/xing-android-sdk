@@ -8,6 +8,7 @@ import de.hdodenhof.xingapi.internal.response.ContactsWrapper;
 import de.hdodenhof.xingapi.internal.response.ConversationWrapper;
 import de.hdodenhof.xingapi.internal.response.ConversationsWrapper;
 import de.hdodenhof.xingapi.internal.response.IdCardWrapper;
+import de.hdodenhof.xingapi.internal.response.JobWrapper;
 import de.hdodenhof.xingapi.internal.response.LikesWrapper;
 import de.hdodenhof.xingapi.internal.response.MessageWrapper;
 import de.hdodenhof.xingapi.internal.response.MessagesWrapper;
@@ -19,6 +20,7 @@ import de.hdodenhof.xingapi.internal.response.TagsWrapper;
 import de.hdodenhof.xingapi.internal.response.UserWrapper;
 import de.hdodenhof.xingapi.internal.response.VisitsWrapper;
 import de.hdodenhof.xingapi.models.FindByEmailsResult;
+import de.hdodenhof.xingapi.models.Job;
 import retrofit.http.DELETE;
 import retrofit.http.GET;
 import retrofit.http.POST;
@@ -151,6 +153,11 @@ public abstract class XingApiInterface {
         @POST(BASEPATH + "/users/{userId}/visits.json")
         VisitsWrapper postVisit(@Path("userId") String userId);
 
+    }
+
+    public interface Jobs {
+        @GET(BASEPATH + "/jobs/find.json")
+        JobWrapper<Job> find(@Query("query") String query, @Query("limit") int limit, @Query("location") String location, @Query("user_fields") String fields);
     }
 
 }
